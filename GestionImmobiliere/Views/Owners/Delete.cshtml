@@ -1,0 +1,89 @@
+﻿@model GestionImmobiliere.Models.Owner
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h4 class="text-decoration-underline">Supprimer propriétaire :</h4>
+
+<div>
+    <!-- <h4>OwnerClass</h4>-->
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <!-- Html.DisplayNameFor(model => model.Name_owner)   -->
+            @Html.DisplayName("Nom du Propriétaire")
+            <!--
+                La méthode DisplayNameFor est utilisée pour afficher le nom convivial d'un champ de modèle dans une vue.
+                        Dans cet exemple, model => model.Name_owner est utilisé pour spécifier le champ de modèle pour
+                        lequel le nom convivial doit être affiché. Cela peut être utile pour personnaliser les étiquettes
+                        des champs de formulaire et pour rendre la vue plus lisible pour l'utilisateur final.
+            -->
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_owner)
+            <!--
+                    Cette ligne de code génère une balise HTML pour afficher la valeur de la propriété Name_owner du modèle Owner.
+                    Cette balise HTML est remplie avec la valeur de la propriété Name_owner lors de l'affichage de la vue.
+            -->
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.First_name_owner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_name_owner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.E_mail_owner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.E_mail_owner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_owner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_owner)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        <!--
+        Cette ligne de code permet de commencer un formulaire HTML en utilisant la méthode BeginForm de
+            l'objet Html. Tout le contenu du formulaire doit être contenu dans les accolades qui suivent
+            cette instruction.
+        -->
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Supprimer" class="btn btn-default btn-sm btn-danger" />
+            @Html.ActionLink("Retour à la liste", "Index", new { }, new { @class = "btn btn-sm btn-primary" })
+
+            <!--
+
+                Html.ActionLink est une méthode qui permet de générer un lien hypertexte vers une action d'un contrôleur
+                    dans une application ASP.NET MVC. Cette méthode peut être utilisée pour générer des liens vers des pages,
+                    des vues ou des contrôleurs dans votre application web. La méthode prend en paramètres l'affichage du texte
+                    du lien, le nom de l'action, le nom du contrôleur, ainsi que d'autres paramètres tels que les classes CSS
+                    et les attributs HTML.
+
+                    "Texte d'ancrage" : le texte du lien hypertexte à afficher dans la page web
+                    "Action" : le nom de l'action dans le contrôleur cible
+                    "Contrôleur" : le nom du contrôleur qui contient l'action cible
+                    routeValues : un objet qui contient des paires clé-valeur pour les paramètres d'URL de l'action
+                        cible (peut être null)
+                    htmlAttributes : un objet qui contient des attributs HTML supplémentaires à ajouter à la
+                        balise <a> (peut être null)
+                    -->
+        </div>
+    }
+</div>

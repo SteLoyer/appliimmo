@@ -1,0 +1,173 @@
+﻿@model GestionImmobiliere.Models.Owner
+
+<!--
+En résumé, la directive model est utilisée pour définir le modèle de vue utilisé par une vue
+    dans ASP.NET MVC. Dans cet exemple, le modèle de vue est l'objet Owner du namespace
+    GestionImmobiliere.Models.
+-->
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h4 class="text-decoration-underline">Créer un propriétaire :</h4>
+
+
+@using (Html.BeginForm())
+{
+    <!--
+    using (Html.BeginForm()) est une directive Razor utilisée dans les fichiers de vue d'ASP.NET MVC
+        pour créer un formulaire HTML.
+
+    Cette directive commence par using car elle utilise un objet spécial appelé Html.
+        Cet objet fournit des méthodes de création d'éléments HTML qui peuvent être utilisées dans les
+        vues Razor.
+
+    Html.BeginForm() crée un élément de formulaire HTML, qui est une balise <form>. Cette méthode
+        retourne un objet qui est utilisé pour construire le reste du formulaire. En encadrant cette
+        directive avec using, cela garantit que l'objet Html est correctement nettoyé lorsque la vue
+        est rendue.
+
+    En résumé, using (Html.BeginForm()) est utilisé pour créer un formulaire HTML dans une vue Razor
+        ASP.NET MVC.
+    -->
+
+
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <!--<h4>OwnerClass</h4>-->
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <!--
+    Html.ValidationSummary(true, "", new { class = "text-danger" }) est une directive Razor utilisée dans les fichiers de vue d'ASP.NET MVC
+        pour afficher un résumé des erreurs de validation associées au modèle de vue.
+
+    Cette directive utilise l'objet Html, qui fournit des méthodes de création d'éléments HTML. La méthode ValidationSummary est utilisée
+        pour afficher une liste de toutes les erreurs de validation pour le modèle de vue. Le premier paramètre true indique que toutes
+        les erreurs doivent être affichées, plutôt que de les afficher une par une.
+
+    Le deuxième paramètre est une chaîne vide qui sert à spécifier un titre pour le résumé des erreurs, mais dans cet exemple
+        il n'y en a pas. Le troisième paramètre { class = "text-danger" } spécifie une classe CSS text-danger, qui est utilisée
+        pour formater le texte de l'erreur en rouge.
+
+    En résumé, Html.ValidationSummary(true, "", new { class = "text-danger" }) est utilisé pour afficher un résumé des erreurs
+        de validation pour le modèle de vue d'ASP.NET MVC.
+            -->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name_owner, htmlAttributes: new { @class = "control-label col-md-2" })
+        <!--
+                    Html.LabelFor est une directive Razor utilisée dans les fichiers de vue d'ASP.NET MVC pour créer une étiquette
+            HTML associée à une propriété du modèle de vue.
+
+        Dans l'exemple Html.LabelFor(model => model.Name_owner, htmlAttributes: new { class = "control-label col-md-2" }),
+            model => model.Name_owner est une expression lambda qui spécifie la propriété du modèle de vue à laquelle l'étiquette est associée,
+            qui est Name_owner dans ce cas.
+
+        Le deuxième paramètre htmlAttributes est un objet qui spécifie les attributs HTML à ajouter à l'étiquette, dans ce
+            cas class = "control-label col-md-2". Cela ajoute une classe CSS control-label col-md-2 à l'élément HTML <label>,
+            qui est utilisée pour appliquer un style particulier à l'étiquette.
+
+        En résumé, Html.LabelFor(model => model.Name_owner, htmlAttributes: new { class = "control-label col-md-2" }) est utilisé
+            pour créer une étiquette HTML associée à la propriété Name_owner du modèle de vue, avec les attributs HTML spécifiés
+            pour appliquer un style particulier à l'étiquette.
+                -->
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Name_owner, new { htmlAttributes = new { @class = "form-control" } })
+            <!--
+                        Html.EditorFor est une directive Razor utilisée dans les fichiers de vue d'ASP.NET MVC pour créer un champ de saisie
+                    HTML associé à une propriété du modèle de vue.
+
+            Dans l'exemple Html.EditorFor(model => model.Name_owner, new { htmlAttributes = new { class = "form-control" } }),
+                    model => model.Name_owner est une expression lambda qui spécifie la propriété du modèle de vue à laquelle le champ de saisie
+                    est associé, qui est Name_owner dans ce cas.
+
+            Le deuxième paramètre new { htmlAttributes = new { class = "form-control" } } est un objet qui spécifie les attributs HTML à
+                    ajouter au champ de saisie, dans ce cas class = "form-control". Cela ajoute une classe CSS form-control à l'élément
+                    HTML <input>, qui est utilisée pour appliquer un style particulier au champ de saisie.
+
+            En résumé, Html.EditorFor(model => model.Name_owner, new { htmlAttributes = new { class = "form-control" } }) est utilisé
+                    pour créer un champ de saisie HTML associé à la propriété Name_owner du modèle de vue, avec les attributs HTML spécifiés
+                    pour appliquer un style particulier au champ de saisie.
+                    -->
+            @Html.ValidationMessageFor(model => model.Name_owner, "", new { @class = "text-danger" })
+            <!--
+                        Html.ValidationMessageFor est une directive Razor utilisée dans les fichiers de vue d'ASP.NET MVC pour afficher un
+                    message de validation pour une propriété de modèle spécifiée. Si la validation échoue pour cette propriété, le message
+                    d'erreur sera affiché avec une classe CSS text-danger, qui est utilisée pour mettre en évidence les erreurs dans la vue.
+
+            Dans l'exemple Html.ValidationMessageFor(model => model.Name_owner, "", new { class = "text-danger" }), model => model.Name_owner
+                    est une expression lambda qui spécifie la propriété du modèle de vue pour laquelle afficher le message d'erreur de validation,
+                    qui est Name_owner dans ce cas.
+
+            Le deuxième paramètre "" est une chaîne vide utilisée pour spécifier le message d'erreur personnalisé à afficher pour cette
+                    propriété. Si ce paramètre est laissé vide, le système affichera le message d'erreur par défaut associé à la validation
+                    échouée pour cette propriété.
+
+            Le troisième paramètre new { class = "text-danger" } est un objet qui spécifie les attributs HTML à ajouter au message d'erreur
+                    de validation, dans ce cas class = "text-danger". Cela ajoute une classe CSS text-danger à l'élément HTML qui affiche
+                    le message d'erreur, qui est utilisée pour mettre en évidence le message d'erreur et le rendre plus visible pour
+                    l'utilisateur.
+
+            En résumé, Html.ValidationMessageFor(model => model.Name_owner, "", new { class = "text-danger" }) est utilisé pour afficher
+                    un message d'erreur de validation pour la propriété Name_owner du modèle
+
+
+
+
+                -->
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.First_name_owner, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.First_name_owner, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.First_name_owner, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.E_mail_owner, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.E_mail_owner, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.E_mail_owner, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone_owner, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Phone_owner, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Phone_owner, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Créer" class="btn btn-sm btn-default btn-primary my-2 " />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+   @Html.ActionLink("Retour", "Index",new {}, new { @class = "btn btn-sm btn-info" })
+    <!--
+        Html.ActionLink est une méthode de l'API HTML Helper dans ASP.NET qui crée un lien hypertexte HTML (balise <a>)
+            vers une action spécifiée dans un contrôleur spécifié. La méthode prend des paramètres pour spécifier le
+            texte d'ancrage du lien, l'action et le contrôleur cibles, ainsi que des valeurs pour les paramètres d'URL de
+            l'action cible.
+            "Texte d'ancrage" : le texte du lien hypertexte à afficher dans la page web
+    "Action" : le nom de l'action dans le contrôleur cible
+    "Contrôleur" : le nom du contrôleur qui contient l'action cible
+    routeValues : un objet qui contient des paires clé-valeur pour les paramètres d'URL de l'action cible
+        (peut être null)
+    htmlAttributes : un objet qui contient des attributs HTML supplémentaires à ajouter à la balise <a>
+        (peut être null)
+        -->
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

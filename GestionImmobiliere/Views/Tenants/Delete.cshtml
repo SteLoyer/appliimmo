@@ -1,0 +1,54 @@
+﻿@model GestionImmobiliere.Models.Tenant
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h4 class="text-decoration-underline">Supprimer locataire :</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_tenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_tenant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.First_name_tenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_name_tenant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email_tenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_tenant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_tenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_tenant)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Supprimer" class="btn btn-sm btn-success" /> 
+    @Html.ActionLink("Retour à la liste", "Index",new { }, new { @class = "btn btn-sm btn-info" })
+</div>
+    }
+</div>

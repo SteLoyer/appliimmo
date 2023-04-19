@@ -1,0 +1,82 @@
+﻿@model GestionImmobiliere.Models.Logement
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4 class="text-decoration-underline">Details logement :</h4>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complement_adress_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complement_adress_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postal_code_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postal_code_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Town_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Town_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rental_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rental_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Charge_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Charge_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deposit_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deposit_property)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editer", "Edit", new { id = Model.Id_property }, new { @class = "btn btn-sm btn-primary" })
+    @Html.ActionLink("Retour à la liste", "Index", new { }, new { @class = "btn btn-sm btn-info" })
+</p>

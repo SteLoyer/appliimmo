@@ -1,0 +1,91 @@
+﻿@model GestionImmobiliere.Models.Rental_Payment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4 class="text-decoration-underline">Détails encaissement :</h4>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_rental_file)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_rental_file)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_tenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_tenant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.First_name_tenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_name_tenant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rental_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rental_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Charge_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Charge_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_paid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_method)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Editer", "Edit", new { id = Model.Id_rental_payment }, new { @class = "btn btn-sm btn-primary" })
+    @Html.ActionLink("Retour à la liste", "Index", new { }, new { @class = "btn btn-sm btn-info" })
+</p>

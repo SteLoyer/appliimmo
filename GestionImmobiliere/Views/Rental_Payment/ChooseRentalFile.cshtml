@@ -1,0 +1,85 @@
+﻿@model IEnumerable<GestionImmobiliere.Models.Rental_File>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4 class="text-decoration-underline">Choisir dossier dans la liste :</h4>
+@using (Html.BeginForm())
+{
+
+
+
+    <table class="table" id="Tenant_Table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id_rental_file)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name_tenant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First_name_tenant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email_tenant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone_tenant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rental_property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Charge_property)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id_rental_file)
+                    </td> 
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name_tenant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.First_name_tenant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email_tenant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone_tenant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rental_property)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Charge_property)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Choisir Dossier", "Create1", new { id = item.Id_rental_file }, new { @class = "btn btn-default btn-primary" })
+                     </td>
+                   
+                </tr>
+            }
+        </tbody>
+
+       
+
+
+    </table>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () { $("#Tenant_Table").DataTable() })
+    </script>
+}
+

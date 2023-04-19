@@ -1,0 +1,96 @@
+﻿@model GestionImmobiliere.Models.Rental_Payment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Rental_Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_rental_file)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_rental_file)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_tenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_tenant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.First_name_tenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_name_tenant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rental_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rental_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Charge_property)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Charge_property)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_paid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_method)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

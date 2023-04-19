@@ -1,0 +1,50 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+body {
+    background-color: rgb( 227, 227, 210);
+}
+
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type=checkbox] {
+    background: red;
+    border-radius: 4px;
+    height: 15px;
+    width: 15px;
+   
+    border: 1px solid #ccc;
+}
+
+input[type="checkbox"]:checked {
+    background: green;
+    margin: 0px;
+    position: relative;
+}
+    &:before{
+    font-family: FontAwesome;
+    content: '\f00c';
+    display: block;
+    color: grey;
+    font-size: 13px;
+    position: absolute;
+}
+
+#align-left {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.hidden {
+    display: none;
+}
+
