@@ -744,6 +744,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
@@ -888,7 +889,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Rental_File\Index_Logement.cshtml" />
-    <Content Include="Views\Rental_File\Bail.cshtml" />
+    <Content Include="Views\Rental_File\Etat_des_lieux.cshtml" />
     <Content Include="Views\Rental_Payment\Create.cshtml" />
     <Content Include="Views\Rental_Payment\Delete.cshtml" />
     <Content Include="Views\Rental_Payment\Details.cshtml" />

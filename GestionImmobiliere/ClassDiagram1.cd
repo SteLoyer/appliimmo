@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GestionImmobiliere.BundleConfig" Collapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.FilterConfig" Collapsed="true">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.RouteConfig" Collapsed="true">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.MvcApplication" Collapsed="true">
+    <Position X="7.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.App_Start.FontAwesomeBundleConfig" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FontAwesomeBundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendEmail.Controllers.HomeController" Collapsed="true">
+    <Position X="2.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAACAAAQAAAAgAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Controllers.LogementsController" Collapsed="true">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\LogementsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Controllers.OwnersController" Collapsed="true">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\OwnersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Controllers.Rental_FileController" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACARABCAgAABADAQAAGAAEACAAEIAAAAAIA=</HashCode>
+      <FileName>Controllers\Rental_FileController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Controllers.Rental_PaymentController" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQABIAAACARAACAAAAAQCAIAgECAEICAAEIAAAEAAA=</HashCode>
+      <FileName>Controllers\Rental_PaymentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Controllers.TenantsController" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\TenantsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.DataContext.ApplicationDbContext" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAACAAAAAAIAAAAAAAEAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataContext\ApplicationDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Models.Email" Collapsed="true">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Models.EmailFormModel" Collapsed="true">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\EmailFormModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Models.Logement" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiAAAAAAQAAAAAAAAAAgAABEAAIAAAAAAQAAIgAAAA=</HashCode>
+      <FileName>Models\Logement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Models.Owner" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAQAAAAAAEAAAAAAAAAAAAgAAAAAAAAQAAA=</HashCode>
+      <FileName>Models\Owner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Models.Rental_File" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gACAABQAAAAAAEAAAAEAkAgAEAAAAKAAAAQAAIgAAIA=</HashCode>
+      <FileName>Models\Rental_File.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Models.Rental_Payment" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAAAAAEAAAAAA0AggEAAAAIAACAQAAKgAAAA=</HashCode>
+      <FileName>Models\Rental_Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestionImmobiliere.Models.Tenant" Collapsed="true">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAEAAAAAAEAgAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Tenant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GestionImmobiliere.Models.Type_property" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAIABAAYAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Logement.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GestionImmobiliere.Models.Payment_method" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEACAAAAQAAAAAAAgAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Rental_Payment.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

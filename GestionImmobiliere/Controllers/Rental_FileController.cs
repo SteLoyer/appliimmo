@@ -15,7 +15,7 @@ namespace GestionImmobiliere.Controllers
         // POST: Rental_File2/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Bail([Bind(Include = "Id_rental_file,Id_tenant,Id_logement,Name_tenant,First_name_tenant,Email_tenant,Phone_tenant,Adress_property,Postal_code_property,Town_property,Rental_property,Date_of_rental,Charge_property,Deposit_property,Lease_report,Date_lease_report")] Rental_File rental_File)
+        public ActionResult Etat_des_lieux([Bind(Include = "Id_rental_file,Id_tenant,Id_logement,Name_tenant,First_name_tenant,Email_tenant,Phone_tenant,Adress_property,Postal_code_property,Town_property,Rental_property,Date_of_rental,Charge_property,Deposit_property,Lease_report,Date_lease_report")] Rental_File rental_File)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,7 @@ namespace GestionImmobiliere.Controllers
 
 
         // GET: Rental_File2/Edit/5
-        public ActionResult Bail(int? id)
+        public ActionResult Etat_des_lieux(int? id)
         {
             if (id == null)
             {

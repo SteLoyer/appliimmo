@@ -75,6 +75,9 @@ namespace GestionImmobiliere.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date_lease_report { get; set; }
 
+        [Display(Name = "Date de fin")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime Date_finish_lease { get; set; }
     }
   
 }

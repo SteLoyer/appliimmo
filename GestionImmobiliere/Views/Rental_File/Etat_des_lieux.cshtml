@@ -1,0 +1,114 @@
+﻿@model GestionImmobiliere.Models.Rental_File
+
+@{
+    ViewBag.Title = "Bail";
+}
+
+<h4 class="text-decoration-underline">Etat des lieux : </h4>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="row">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id_rental_file)
+
+
+
+    <div class="form-group col-6">
+        @Html.LabelFor(model => model.Name_tenant, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Name_tenant, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-6">
+        @Html.LabelFor(model => model.First_name_tenant, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.First_name_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.First_name_tenant, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group col-6">
+        @Html.LabelFor(model => model.Adress_property, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Adress_property, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Adress_property, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group col-6">
+        @Html.LabelFor(model => model.Postal_code_property, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Postal_code_property, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Postal_code_property, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-6">
+        @Html.LabelFor(model => model.Town_property, htmlAttributes: new { @class = "control-label col-md-2 " })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Town_property, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Town_property, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div> <hr /></div>
+    <div class="form-group col-6">
+        @Html.LabelFor(model => model.Date_lease_report, htmlAttributes: new { @class = "control-label " })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Date_lease_report, new { htmlAttributes = new { @class = "form-control col-4", Type = "date" } })
+            @Html.ValidationMessageFor(model => model.Date_lease_report, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group col-6">
+        @Html.LabelFor(model => model.Date_finish_lease, htmlAttributes: new { @class = "control-label " })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Date_finish_lease, new { htmlAttributes = new { @class = "form-control col-4", Type = "date" } })
+            @Html.ValidationMessageFor(model => model.Date_finish_lease, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-12">
+        @Html.LabelFor(model => model.Lease_report, htmlAttributes: new { @class = "control-label" })
+        <div class="col-md-12">
+            <textarea id="Lease_report" name="Lease_report" class="form-control control-label col-md-12" rows="6">
+             @Model.Lease_report
+            </textarea>
+            @Html.ValidationMessageFor(model => model.Lease_report, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <div class="hidden">
+        @Html.EditorFor(model => model.Email_tenant)
+        @Html.EditorFor(model => model.Phone_tenant)
+        @Html.EditorFor(model => model.Adress_property)
+        @Html.EditorFor(model => model.Date_of_rental)
+        @Html.EditorFor(model => model.Charge_property)
+        @Html.EditorFor(model => model.Deposit_property)
+        @Html.EditorFor(model => model.Rental_property)
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Sauvegarder" class="btn btn-sm my-2 btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+   @Html.ActionLink("Retour à la liste", "Index", new { }, new { @class = "btn btn-sm btn-info" })
+</div>
