@@ -7,9 +7,10 @@
 
 
 body {
-    /*  background-color: rgb( 227, 227, 210);*/
-    background-image: url(./images/pexels-chris-czermak-2444429.jpg);
-    background-size: auto;
+   /*   background-color: rgb( 227, 227, 210);*/
+    background-image: url(./images/image6.jpg);
+   
+    background-size:cover;
 }
 
 input[type=checkbox] {
