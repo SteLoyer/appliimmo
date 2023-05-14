@@ -736,6 +736,12 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="Content\documents\Locataires.pdf" />
+    <Content Include="Content\documents\Logements.pdf" />
+    <Content Include="Content\documents\Proprietaires.pdf" />
+    <Content Include="Content\documents\Dossier de location.pdf" />
+    <Content Include="Content\documents\Encaissements.pdf" />
+    <Content Include="Content\documents\Parametres.pdf" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
