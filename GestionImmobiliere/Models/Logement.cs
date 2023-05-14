@@ -62,6 +62,13 @@ namespace GestionImmobiliere.Models
 
         [Display(Name = "Etat")]
         public bool State_property { get; set; }
+
+        [Display(Name = "Propriétaire")]
+        public int Id_owner { get; set; }
+
+        [ForeignKey("Id_owner")]
+        [Display(Name = "Propriétaire")]
+        public virtual Owner Owner { get; set; }
     }
     public enum Type_property
     {

@@ -17,6 +17,9 @@
                 @Html.DisplayNameFor(model => model.Id_property)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Owner)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Adress_property)
             </th>
             <th class="col-1">
@@ -43,7 +46,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.State_property)
             </th>
-            <th></th>
+           
         </tr>
     </thead>
     <tbody>
@@ -51,8 +54,18 @@
         {
             <tr class="text-center">
 
-                <td>
+                <td class="col-3">
                     @Html.DisplayFor(modelItem => item.Id_property)
+                    <div>
+                        @Html.ActionLink("Editer", "Edit", new { id = item.Id_property }, new { @class = "btn btn-sm btn-primary" })
+                        @Html.ActionLink("Details", "Details", new { id = item.Id_property }, new { @class = "btn btn-sm my-1 btn-warning" })
+                        @Html.ActionLink("Supprimer", "Delete", new { id = item.Id_property }, new { @class = "btn btn-sm btn-danger" })
+
+                    </div>
+                   
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Owner.Name_owner)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Adress_property)
@@ -82,11 +95,7 @@
                     @Html.DisplayFor(modelItem => item.State_property, new { @class = "State_property" })
 
                 </td>
-                <td class="col-3">
-                    @Html.ActionLink("Editer", "Edit", new { id = item.Id_property }, new { @class = "btn btn-sm btn-primary" })
-                    @Html.ActionLink("Details", "Details", new { id = item.Id_property }, new { @class = "btn btn-sm btn-warning" })
-                    @Html.ActionLink("Supprimer", "Delete", new { id = item.Id_property }, new { @class = "btn btn-sm btn-danger" })
-                </td>
+            
 
             </tr>
         }

@@ -4,68 +4,65 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Choisir Locataire :</h2>
 @using (Html.BeginForm())
-            {
-
-           
- 
-<table class="table" id="Tenant_Table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id_tenant)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name_tenant)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First_name_tenant)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email_tenant)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone_tenant)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+{
+    <table class="table" id="Tenant_Table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id_tenant)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name_tenant)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.First_name_tenant)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email_tenant)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone_tenant)
-                </td>
-                <td>
-                    <!--
-        Html.ActionLink("Choisir Locataire", "SaveData", new { id = item.Id_tenant })
-    -->
-                    @Html.ActionLink("Choisir Dossier", "Save_Tenant_RentalFile", new { id = item.Id_tenant }, new { @class = "btn btn-default btn-primary" })
-                    
-                </td>
-               
+                <th>
+                    @Html.DisplayNameFor(model => model.Id_tenant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name_tenant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First_name_tenant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email_tenant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone_tenant)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id_tenant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name_tenant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.First_name_tenant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email_tenant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone_tenant)
+                    </td>
+                    <td>
+                        <!--
+                            Html.ActionLink("Choisir Locataire", "SaveData", new { id = item.Id_tenant })
+                        -->
+                        @Html.ActionLink("Choisir Locataire", "Save_Tenant_RentalFile", new { id = item.Id_tenant }, new { @class = "btn btn-default btn-primary" })
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
 
 
 
 
-</table>
+    </table>
 }
 
 @section scripts

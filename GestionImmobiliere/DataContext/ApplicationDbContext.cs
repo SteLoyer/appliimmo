@@ -19,5 +19,6 @@ namespace GestionImmobiliere.DataContext
 
         public System.Data.Entity.DbSet<GestionImmobiliere.Models.Rental_Payment> Rental_Payment { get; set; }
 
-          }
+        public System.Data.Entity.DbSet<GestionImmobiliere.Models.Parameters> Parameters { get; set; }
+    }
 }

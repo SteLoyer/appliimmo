@@ -7,10 +7,8 @@
 
 
 body {
-   /*   background-color: rgb( 227, 227, 210);*/
-    background-image: url(./images/image6.jpg);
+    background-color: rgb( 240, 248, 255);
    
-    background-size:cover;
 }
 
 input[type=checkbox] {

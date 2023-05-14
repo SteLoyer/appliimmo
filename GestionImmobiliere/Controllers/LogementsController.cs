@@ -47,7 +47,7 @@ namespace GestionImmobiliere.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_property,Adress_property,Complement_adress_property,Postal_code_property,Town_property,Type_property,Rental_property,Charge_property,Deposit_property,State_property")] Logement logement)
+        public ActionResult Create([Bind(Include = "Id_property,Adress_property,Complement_adress_property,Postal_code_property,Town_property,Type_property,Rental_property,Charge_property,Deposit_property,State_property,Id_owner")] Logement logement)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace GestionImmobiliere.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_property,Adress_property,Complement_adress_property,Postal_code_property,Town_property,Type_property,Rental_property,Charge_property,Deposit_property,State_property")] Logement logement)
+        public ActionResult Edit([Bind(Include = "Id_property,Adress_property,Complement_adress_property,Postal_code_property,Town_property,Type_property,Rental_property,Charge_property,Deposit_property,State_property,Id_owner")] Logement logement)
         {
             if (ModelState.IsValid)
             {

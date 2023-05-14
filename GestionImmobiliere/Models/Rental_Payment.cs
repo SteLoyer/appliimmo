@@ -47,15 +47,22 @@ namespace GestionImmobiliere.Models
         [Display(Name = "Ville")]
         public string Town_property { get; set; }
 
+       
         [Display(Name = "Montant Loyer")]
         [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Rental_property { get; set; }
-     
-        [Display(Name = "8% du montant loyer")]
+
+        [Display(Name = "Taxe agence")]
+        [DisplayFormat(DataFormatString = "{0:P2}")]
+        public decimal Agency_taxe { get; set; }
+
+        [Display(Name = "Montant agence")]
         [DataType(DataType.Currency)]
-        public decimal Taxe_agency { get { return Rental_property * 0.08m; } }
+        public decimal Taxe_agency { get { return Rental_property * Agency_taxe/100 ; } }
        
         [Display(Name = "Charges")]
+        [DataType(DataType.Currency)]
         public decimal Charge_property { get; set; }
 
         [Display(Name = "Date de paiement")]

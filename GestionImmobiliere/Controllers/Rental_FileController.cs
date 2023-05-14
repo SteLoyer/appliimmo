@@ -12,7 +12,41 @@ namespace GestionImmobiliere.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // POST: Rental_File2/Edit/5
+        // GET: Rental_File2/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Rental_File rental_File = db.Rental_File.Find(id);
+            if (rental_File == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Id = id;
+            return View(rental_File);
+        }
+
+        // POST: RentalFile/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id_rental_file,Id_tenant,Id_logement,Name_tenant,First_name_tenant,Email_tenant,Phone_tenant,Adress_property,Postal_code_property,Town_property,Rental_property,Date_of_rental,Charge_property,Deposit_property,Lease_report,Date_lease_report")] Rental_File rental_File)
+        {
+            if (ModelState.IsValid)
+            {
+
+                db.Entry(rental_File).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(rental_File);
+        }
+
+
+
+
+        // POST: Rental_File2/Etat_des_lieux
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Etat_des_lieux([Bind(Include = "Id_rental_file,Id_tenant,Id_logement,Name_tenant,First_name_tenant,Email_tenant,Phone_tenant,Adress_property,Postal_code_property,Town_property,Rental_property,Date_of_rental,Charge_property,Deposit_property,Lease_report,Date_lease_report")] Rental_File rental_File)
@@ -26,11 +60,7 @@ namespace GestionImmobiliere.Controllers
             return View(rental_File);
         }
 
-      
-
-
-
-        // GET: Rental_File2/Edit/5
+        // GET: Rental_File2/Etat_des_lieux
         public ActionResult Etat_des_lieux(int? id)
         {
             if (id == null)
@@ -70,8 +100,6 @@ namespace GestionImmobiliere.Controllers
                 data2.Charge_property = record1.Charge_property;
                 data2.Deposit_property = record1.Deposit_property;
                
-
-
                 // Enregistrer les modifications
                 db.Entry(data2).State = EntityState.Modified;
                 db.SaveChanges();
@@ -97,12 +125,10 @@ namespace GestionImmobiliere.Controllers
                 data2.Email_tenant = record1.Email_tenant;
                 data2.Phone_tenant = record1.Phone_tenant;
 
-
                 // Enregistrer les modifications
                 db.Entry(data2).State = EntityState.Modified;
                 db.SaveChanges();
             }
-
             return RedirectToAction("Edit2/"+rentalFileId);
         }
 
@@ -122,51 +148,7 @@ namespace GestionImmobiliere.Controllers
             return View(rental_File);
         }
 
-
-
-
-
-
-        public ActionResult SaveData5(int? id)
-        {
-            // Récupérer les enregistrements des deux tables
-            var record1 = db.Tenants.Find(id);
-
-            // Utilisez l'ID pour récupérer les détails de l'objet souhaité
-            int RentalFileId = (int)Session["RentalFileId"];
-            var data2 = db.Rental_File.Find(RentalFileId);
-
-            // Si les enregistrements sont valides, les enregistrer dans la table 2
-            if (record1 != null && data2 != null)
-            {
-                var dataToSave = new Rental_File
-                {// assigner les valeurs de table 1 aux colonnes de table 2
-                    Name_tenant = record1.Name_tenant,
-                    First_name_tenant = record1.First_name_tenant,
-                };
-
-                // Ajouter la nouvelle ligne à la table 2 et enregistrer les modifications
-                db.Entry(dataToSave).State = EntityState.Added;
-                db.SaveChanges();
-
-                // Mettre à jour la valeur de la session avec la nouvelle valeur Id_rental_file
-                Session["RentalFileId"] = dataToSave.Id_rental_file;
-
-                // Mettre à jour la valeur de RentalFileId avec la nouvelle valeur Id_rental_file
-                RentalFileId = dataToSave.Id_rental_file;
-
-                // Mettre à jour la ligne existante dans la table 2 avec les nouvelles données
-                data2.Name_tenant = record1.Name_tenant;
-                data2.First_name_tenant = record1.First_name_tenant;
-                db.Entry(data2).State = EntityState.Modified;
-                db.SaveChanges();
-
-                return RedirectToAction("Index");
-            }
-
-            return RedirectToAction("Index");
-        }
-
+       
 
         // GET: Rental_File2/Create
         public ActionResult Create1([Bind(Include = "Id_rental_file")] Rental_File rental_File1)
@@ -180,22 +162,7 @@ namespace GestionImmobiliere.Controllers
 
             return View(rental_File1);
         }
-
-        // POST: Rental_File2/Create2
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create2([Bind(Include = "Id_rental_file,Id_tenant,Id_logement,Name_tenant,First_name_tenant,Email_tenant,Phone_tenant,Adress_property,Postal_code_property,Town_property,Rental_property,Date_of_rental,Charge_property,Deposit_property,Lease_report,Date_lease_report")] Rental_File rental_File)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Rental_File.Add(rental_File);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(rental_File);
-        }
-
+    
         // GET: Rental_File2
         public ActionResult Index_Tenant(int id)
         {
@@ -252,43 +219,6 @@ namespace GestionImmobiliere.Controllers
             }
             return View(rental_File);
         }
-
-        // GET: Rental_File2/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Rental_File2/Create
-       [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_logement")] Rental_File rental_File)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Rental_File.Add(rental_File);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(rental_File);
-        }
-
-        // GET: Rental_File2/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Rental_File rental_File = db.Rental_File.Find(id);
-            if (rental_File == null)
-            {
-                return HttpNotFound();
-            }
-            return View(rental_File);
-        }
-
         // GET: Rental_File2/Edit/5
         public ActionResult Edit2(int? id)
         {
@@ -301,20 +231,7 @@ namespace GestionImmobiliere.Controllers
             {
                 return HttpNotFound();
             }
-            return View(rental_File);
-        }
-
-        // POST: Rental_File2/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_rental_file,Id_tenant,Id_logement,Name_tenant,First_name_tenant,Email_tenant,Phone_tenant,Adress_property,Postal_code_property,Town_property,Rental_property,Date_of_rental")] Rental_File rental_File)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(rental_File).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            ViewBag.Id = id;
             return View(rental_File);
         }
 

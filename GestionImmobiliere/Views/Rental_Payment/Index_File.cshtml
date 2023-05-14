@@ -1,0 +1,113 @@
+﻿@model IEnumerable<GestionImmobiliere.Models.Rental_Payment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4 class="text-decoration-underline">Encaissement :</h4>
+
+
+<p>
+    @Html.ActionLink("Effectuer un paiement", "ChooseRentalFile", new { area = "" }, new { @class = "btn btn-sm btn-primary" })
+</p>
+
+<table class="table table-striped table-hover text-center" id="RentalPayment_Table">
+    <thead>
+        <tr>
+            <th class="col-3">
+                @Html.DisplayNameFor(model => model.Id_rental_file)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name_tenant)  @Html.DisplayNameFor(model => model.First_name_tenant)
+            </th>
+            <th class="col-2">
+                @Html.DisplayNameFor(model => model.Adress_property)  @Html.DisplayNameFor(model => model.Town_property)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental_property)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Charge_property)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Taxe_agency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount_to_be_paid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount_paid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment_ok)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment_method)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment_date)
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayFor(modelItem => item.Id_rental_file)
+                    </div>
+                    <div>
+                        @Html.ActionLink("Editer", "Edit", new { id = item.Id_rental_payment }, new { @class = "btn btn-sm btn-primary" })
+                        @Html.ActionLink("Détails", "Details", new { id = item.Id_rental_payment }, new { @class = "btn btn-sm my-1 btn-warning" })
+                        @Html.ActionLink("Supprimer", "Delete", new { id = item.Id_rental_payment }, new { @class = "btn btn-sm btn-danger" })
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name_tenant)  @Html.DisplayFor(modelItem => item.First_name_tenant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress_property) @Html.DisplayFor(modelItem => item.Town_property)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rental_property)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Charge_property)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Taxe_agency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount_to_be_paid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount_paid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payment_ok)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payment_method)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payment_date)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+
+
+@section scripts
+{
+    <script>
+            $(document).ready(function () { $("#RentalPayment_Table").DataTable() })
+    </script>
+}
+

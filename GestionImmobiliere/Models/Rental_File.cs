@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.RegularExpressions;
 
 
 namespace GestionImmobiliere.Models
@@ -46,21 +47,21 @@ namespace GestionImmobiliere.Models
         [Display(Name = "Ville")]
         public string Town_property { get; set; }
 
-      //[Required]
-        [DataType(DataType.Currency)]
-       // [Range(1, 2500)]
+        [Required]
         [Display(Name = "Montant Loyer")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        [DataType(DataType.Currency)]
         public decimal Rental_property { get; set; }
 
-       // [Required]
-       [DataType(DataType.Currency)]
-     // [Range(1, 1500)]
+        [Required]
+        [DataType(DataType.Currency)]
+        [DisplayFormat( DataFormatString = "{0:C}")]
         [Display(Name = "Charges")]
         public decimal Charge_property { get; set; }
 
-        //[Required]
+        [Required]
         [DataType(DataType.Currency)]
-      //  [Range(1, 1500)]
+        [DisplayFormat( DataFormatString = "{0:C}")]
         [Display(Name = "Dépot de garantie")]
         public decimal Deposit_property { get; set; }
 

@@ -376,3 +376,5 @@ C:\Users\S.LOYER\Desktop\GestionImmo\GestionImmobiliere\obj\Debug\GestionImmobil
 C:\Users\S.LOYER\Desktop\GestionImmo\GestionImmobiliere\obj\Debug\GestionImmobiliere.csproj.CopyComplete
 C:\Users\S.LOYER\Desktop\GestionImmo\GestionImmobiliere\obj\Debug\GestionImmobiliere.dll
 C:\Users\S.LOYER\Desktop\GestionImmo\GestionImmobiliere\obj\Debug\GestionImmobiliere.pdb
+C:\Users\S.LOYER\Desktop\GestionImmo\GestionImmobiliere\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\S.LOYER\Desktop\GestionImmo\GestionImmobiliere\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml

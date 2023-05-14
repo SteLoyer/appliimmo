@@ -143,6 +143,9 @@
     <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.UnitTesting.11.0.50727.1\lib\net45\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
@@ -409,6 +412,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogementsController.cs" />
     <Compile Include="Controllers\OwnersController.cs" />
+    <Compile Include="Controllers\ParametersController.cs" />
     <Compile Include="Controllers\Rental_FileController.cs" />
     <Compile Include="Controllers\Rental_PaymentController.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
@@ -420,6 +424,7 @@
     <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Models\Logement.cs" />
     <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\Parameters.cs" />
     <Compile Include="Models\Rental_File.cs" />
     <Compile Include="Models\Rental_Payment.cs" />
     <Compile Include="Models\Tenant.cs" />
@@ -603,19 +608,13 @@
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\images\image1.jpg" />
-    <Content Include="Content\images\image2.jpg" />
-    <Content Include="Content\images\image3.jpg" />
-    <Content Include="Content\images\image4.jpg" />
-    <Content Include="Content\images\image5.jpg" />
-    <Content Include="Content\images\image6.jpg" />
-    <Content Include="Content\images\image7.jpg" />
+    <Content Include="Content\images\Dossier.JPG" />
+    <Content Include="Content\images\Encaissements.JPG" />
+    <Content Include="Content\images\Locataires.JPG" />
+    <Content Include="Content\images\Locations.JPG" />
+    <Content Include="Content\images\Parametres.JPG" />
+    <Content Include="Content\images\Proprietaire.JPG" />
     <Content Include="Content\owl.carousel.css" />
-    <Content Include="Content\OwlCarousel\AjaxLoader.gif" />
-    <Content Include="Content\OwlCarousel\grabbing.png" />
-    <Content Include="Content\OwlCarousel\owl.carousel.css" />
-    <Content Include="Content\OwlCarousel\owl.theme.css" />
-    <Content Include="Content\OwlCarousel\owl.transitions.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -845,7 +844,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Owners\Create.cshtml" />
     <Content Include="Views\Owners\Delete.cshtml" />
@@ -862,12 +860,9 @@
     <Content Include="Views\Logements\Details.cshtml" />
     <Content Include="Views\Logements\Edit.cshtml" />
     <Content Include="Views\Logements\Index.cshtml" />
-    <Content Include="Views\Rental_File\Create.cshtml" />
     <Content Include="Views\Rental_File\Delete.cshtml" />
     <Content Include="Views\Rental_File\Details.cshtml" />
-    <Content Include="Views\Rental_File\Edit.cshtml" />
     <Content Include="Views\Rental_File\Index.cshtml" />
-    <Content Include="Views\Rental_File\Create2.cshtml" />
     <Content Include="Views\Rental_File\Index_Tenant.cshtml" />
     <Content Include="Views\Rental_File\Edit2.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -882,12 +877,10 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Rental_File\Index_Logement.cshtml" />
     <Content Include="Views\Rental_File\Etat_des_lieux.cshtml" />
-    <Content Include="Views\Rental_Payment\Create.cshtml" />
     <Content Include="Views\Rental_Payment\Delete.cshtml" />
     <Content Include="Views\Rental_Payment\Details.cshtml" />
     <Content Include="Views\Rental_Payment\Edit.cshtml" />
     <Content Include="Views\Rental_Payment\Index.cshtml" />
-    <Content Include="Views\Rental_Payment\AddPayment.cshtml" />
     <Content Include="Views\Rental_Payment\ChooseRentalFile.cshtml" />
     <Content Include="Views\Rental_Payment\Create1.cshtml" />
     <Content Include="Views\Rental_Payment\Edit2.cshtml" />
@@ -898,6 +891,13 @@
     <Content Include="Views\EmailQuittance.cshtml" />
     <Content Include="Views\Rental_Payment\SentEmail.cshtml" />
     <Content Include="Views\Rental_Payment\SentQuittance.cshtml" />
+    <Content Include="Views\Parameters\Edit.cshtml" />
+    <Content Include="Views\Parameters\Index.cshtml" />
+    <Content Include="Views\Rental_Payment\List_Payment.cshtml" />
+    <Content Include="Views\Rental_Payment\Index_File.cshtml" />
+    <Content Include="Views\Rental_Payment\Edit_Pay_File.cshtml" />
+    <Content Include="Views\Rental_Payment\Del_Pay_File.cshtml" />
+    <Content Include="Views\Rental_File\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

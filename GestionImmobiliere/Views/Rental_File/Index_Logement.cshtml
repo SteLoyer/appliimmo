@@ -4,90 +4,87 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Choisir Logenements :</h2>
 @using (Html.BeginForm())
+{
+    <table class="table" id="Tenant_Table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adress_property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Complement_adress_property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Postal_code_property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Town_property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rental_property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Charge_property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Deposit_property)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type_property)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
             {
+                if (item.State_property == true)
+                {
 
-           
- 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Adress_property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Complement_adress_property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Postal_code_property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Town_property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rental_property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Charge_property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Deposit_property)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type_property)
-            </th>
-          
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            if (item.State_property == true)
-            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Adress_property)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Complement_adress_property)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Postal_code_property)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Town_property)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rental_property)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Charge_property)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Deposit_property)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Type_property)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Choisir Logement", "Save_Logement_RentalFile", new { id = item.Id_property }, new { @class = "btn btn-default btn-primary" })
+                        </td>
 
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Adress_property)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Complement_adress_property)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Postal_code_property)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Town_property)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Rental_property)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Charge_property)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Deposit_property)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Type_property)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Choisir Logement", "Save_Logement_RentalFile", new { id = item.Id_property }, new { @class = "btn btn-default btn-primary" })
-                    </td>
+                    </tr>
+                }
+                else { }
 
-                </tr>
             }
-            else { }
 
-        }
-
-    </tbody>
+        </tbody>
 
 
 
 
-</table>
+    </table>
 }
 
 @section scripts

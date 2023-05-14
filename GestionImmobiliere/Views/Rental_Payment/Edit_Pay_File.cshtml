@@ -1,0 +1,226 @@
+﻿@model GestionImmobiliere.Models.Rental_Payment
+
+@{
+    ViewBag.Title = "Edit_Pay_File";
+}
+
+<h4 class="text-decoration-underline">Enregistrer paiement dossier n°@ViewBag.Id :</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="row">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id_rental_payment)
+
+
+    <h5 class="text-decoration-underline">Coordonnées :</h5>
+
+
+    <div class="form-group col-5" style="display:none;">>
+        @Html.LabelFor(model => model.Id_rental_file, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Id_rental_file, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Id_rental_file, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-5">
+        @Html.LabelFor(model => model.Name_tenant, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Name_tenant, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-5">
+        @Html.LabelFor(model => model.First_name_tenant, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.First_name_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.First_name_tenant, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-5">
+        @Html.LabelFor(model => model.Phone_tenant, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Phone_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Phone_tenant, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-5">
+        @Html.LabelFor(model => model.Email_tenant, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Email_tenant, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group col-5">
+        @Html.LabelFor(model => model.Adress_property, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Adress_property, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Adress_property, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group col-5">
+        @Html.LabelFor(model => model.Postal_code_property, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Postal_code_property, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Postal_code_property, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group col-5">
+        @Html.LabelFor(model => model.Town_property, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Town_property, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Town_property, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div><hr /></div>
+
+    <h5 class="text-decoration-underline">Informations :</h5>
+    <div class="form-group col-2">
+        @Html.LabelFor(model => model.Rental_property, htmlAttributes: new { @class = "control-label col-md-10" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Rental_property, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Rental_property, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  col-2">
+        @Html.LabelFor(model => model.Charge_property, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Charge_property, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Charge_property, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group  col-2">
+        @Html.LabelFor(model => model.Agency_taxe, htmlAttributes: new { @class = "control-label " })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Agency_taxe, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Agency_taxe, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  col-2">
+        @Html.LabelFor(model => model.Taxe_agency, htmlAttributes: new { @class = "control-label " })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Taxe_agency, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Taxe_agency, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group  col-2">
+        @Html.LabelFor(model => model.Amount_to_be_paid, htmlAttributes: new { @class = "control-label " }) €
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Amount_to_be_paid, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Amount_to_be_paid, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div><hr /></div>
+    <h5 class="text-decoration-underline">Réglement :</h5>
+    <div class="form-group col-3">
+        @Html.LabelFor(model => model.Payment_date, htmlAttributes: new { @class = "control-label " })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Payment_date, new { htmlAttributes = new { @class = "form-control", Type = "date" } })
+            @Html.ValidationMessageFor(model => model.Payment_date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-3">
+        @Html.LabelFor(model => model.Amount_paid, htmlAttributes: new { @class = "control-label " })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Amount_paid, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Amount_paid, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-3">
+        @Html.LabelFor(model => model.Payment_method, htmlAttributes: new { @class = "control-label " })
+        <div class="col-md-10">
+            @Html.DropDownList("Payment_method", new SelectList(Enum.GetValues(typeof(GestionImmobiliere.Models.Payment_method))),
+              "Selectionner mode de paiement...", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Payment_method, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-sm btn-success my-2" />
+        </div>
+    </div>
+</div>
+}
+
+@using (Html.BeginForm("SendEmail", "Rental_Payment", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group col-5">
+
+    </div>
+
+  
+
+    <div class="col-md-10 hidden">
+        @Html.EditorFor(model => model.Name_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.Name_tenant, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-10 hidden">
+        @Html.EditorFor(model => model.First_name_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.First_name_tenant, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-10 hidden">
+        @Html.EditorFor(model => model.Email_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.Email_tenant, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group col-6">
+        <div class="">
+            <input type="submit" value="Envoyer Email" class="btn btn-sm my-2 btn-success " />
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("SendQuittance", "Rental_Payment", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group col-5">
+
+    </div>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <div class="col-md-10 hidden">
+        @Html.EditorFor(model => model.Name_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.Name_tenant, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-10 hidden">
+        @Html.EditorFor(model => model.First_name_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.First_name_tenant, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-10 hidden">
+        @Html.EditorFor(model => model.Email_tenant, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.Email_tenant, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group col-6">
+        <div class="">
+          <input type="submit" value="Envoyer Quittance" class="btn btn-sm my-2 btn-success" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Retour à la liste", "List_Payment", new { id= Model.Id_rental_file}, new { @class = "btn btn-sm btn-info" })
+</div>
